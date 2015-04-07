@@ -2,6 +2,7 @@
 (setq-default tab-width 4)
 (setq require-final-newline 't)
 (setq column-number-mode t)
+(global-auto-revert-mode 1)
 
 ;; show trailing whitespace
 (setq-default show-trailing-whitespace t)
