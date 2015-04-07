@@ -10,7 +10,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; key bindings
-(global-set-key [(control c) r] 'revert-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer)
 
 ;; package config
 (require 'package)
