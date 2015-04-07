@@ -21,14 +21,14 @@
 
 ;;(display-graphic-p &optional DISPLAY
 (unless window-system
-	;; hide the menu bar
-    (menu-bar-mode -1)
-	)
+  ;; hide the menu bar
+  (menu-bar-mode -1)
+  )
 
 (if window-system
-	;; theme
-	(load-theme 'flatland t)
-    )
+  ;; theme
+  (load-theme 'flatland t)
+  )
 
 ;; mac key bindings
 (when (eq system-type 'darwin)
