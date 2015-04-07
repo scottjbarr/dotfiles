@@ -1,6 +1,16 @@
 ;; basic stuff
 (setq-default tab-width 4)
 (setq require-final-newline 't)
+(setq column-number-mode t)
+
+;; show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+;; delete trailing whitespace on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; key bindings
+(global-set-key [(control c) r] 'revert-buffer)
 
 ;; package config
 (require 'package)
@@ -26,9 +36,9 @@
     (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
     )
 
-;; enable gofmt on save for go-mode 
-(add-hook 'go-mode-hook 
-          (lambda () 
+;; enable gofmt on save for go-mode
+(add-hook 'go-mode-hook
+          (lambda ()
 			(add-hook 'before-save-hook 'gofmt-before-save nil 'make-it-local)))
 
 ;; Set default font
