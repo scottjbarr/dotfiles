@@ -1,3 +1,10 @@
+;; package config
+(require 'package)
+(package-initialize)
+
+(add-to-list 'package-archives
+  '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 ;; basic stuff
 (setq-default tab-width 4)
 (setq require-final-newline 't)
@@ -12,13 +19,7 @@
 
 ;; key bindings
 (global-set-key (kbd "C-c r") 'revert-buffer)
-
-;; package config
-(require 'package)
-(package-initialize)
-
-(add-to-list 'package-archives
-  '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (global-set-key (kbd "C-c C-f") 'find-file-in-project)
 
 ;;(display-graphic-p &optional DISPLAY
 ;; (unless window-system
@@ -30,6 +31,11 @@
   ;; theme
   (load-theme 'flatland t)
   )
+
+;; projectile - see https://github.com/bbatsov/projectile
+(projectile-global-mode)
+(projectile-mode t)
+(setq projectile-enable-caching t)
 
 ;; mac key bindings
 (when (eq system-type 'darwin)

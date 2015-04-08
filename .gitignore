@@ -2,3 +2,4 @@
 .emacs.d/auto-save-list
 .emacs.d/elpa/archives
 .emacs.d/elpa/gnupg
+.emacs.d/projectile*
