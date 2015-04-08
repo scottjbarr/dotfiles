@@ -21,10 +21,10 @@
   '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;;(display-graphic-p &optional DISPLAY
-(unless window-system
-  ;; hide the menu bar
-  (menu-bar-mode -1)
-  )
+;; (unless window-system
+;;   ;; hide the menu bar
+;;   (menu-bar-mode -1)
+;;   )
 
 (if window-system
   ;; theme
