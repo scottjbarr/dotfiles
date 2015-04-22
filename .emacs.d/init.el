@@ -21,11 +21,11 @@
 (global-set-key (kbd "C-c r") 'revert-buffer)
 ;; (global-set-key (kbd "C-c C-f") 'find-file-in-project)
 
-;;(display-graphic-p &optional DISPLAY
-;; (unless window-system
-;;   ;; hide the menu bar
-;;   (menu-bar-mode -1)
-;;   )
+(display-graphic-p &optional DISPLAY
+ (unless window-system
+   ;; hide the menu bar
+   (menu-bar-mode -1)
+   )
 
 (if window-system
   ;; theme
@@ -36,6 +36,9 @@
 (projectile-global-mode)
 (projectile-mode t)
 (setq projectile-enable-caching t)
+
+;; company module (See http://company-mode.github.io)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; mac key bindings
 (when (eq system-type 'darwin)
