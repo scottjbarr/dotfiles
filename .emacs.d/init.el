@@ -11,6 +11,15 @@
 (setq column-number-mode t)
 (global-auto-revert-mode 1)
 
+(setq-default indent-tabs-mode nil)
+;; (setq-default tab-width 4)
+
+;; disable backup
+(setq backup-inhibited t)
+
+;; disable auto save
+(setq auto-save-default nil)
+
 ;; show trailing whitespace
 (setq-default show-trailing-whitespace t)
 
@@ -19,18 +28,17 @@
 
 ;; key bindings
 (global-set-key (kbd "C-c r") 'revert-buffer)
-;; (global-set-key (kbd "C-c C-f") 'find-file-in-project)
 
 ;;(display-graphic-p &optional DISPLAY
 (unless window-system
-   ;; hide the menu bar
-   (menu-bar-mode -1)
-  )
+    ;; hide the menu bar
+    (menu-bar-mode -1)
+    )
 
 (if window-system
-  ;; theme
-  (load-theme 'flatland t)
-  )
+    ;; theme
+    (load-theme 'flatland t)
+    )
 
 ;; projectile package - see https://github.com/bbatsov/projectile
 (projectile-global-mode)
@@ -45,6 +53,11 @@
     (setq mac-command-modifier 'meta)
     (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
     )
+
+(add-hook 'cc-mode-hook
+		  (setq tab-width 4)
+          (setq indent-tabs-mode 'nil)
+		  )
 
 ;; enable gofmt on save for go-mode
 (add-hook 'go-mode-hook
@@ -62,6 +75,29 @@
 (require 'autopair)
 (autopair-global-mode 1)
 (setq autopair-autowrap t)
+
+(require 'php-mode)
+
+;;(require 'flymake-phpcs)
+;;(add-hook 'php-mode-hook 'flymake-phpcs-load)
+
+;;(eval-after-load 'php-mode
+;;  (require 'php-extras))
+
+;; See https://github.com/ejmr/php-mode
+;;(add-hook 'php-mode-hook 'php-enable-psr2-coding-style)
+
+;; php coding style - see https://github.com/senda-akiha/flymake-phpcs
+;; (require 'cl)
+;; (require 'flymake-phpcs)
+;; (add-hook 'php-mode-hook 'flymake-phpcs-load)
+
+;; see https://github.com/flycheck/flycheck
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; customize the coding standard
+;;(custom-set-variables
+;; '(flymake-phpcs-standard "PSR2"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
