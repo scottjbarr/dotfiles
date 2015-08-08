@@ -78,6 +78,10 @@
 
 (require 'php-mode)
 
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
 ;;(require 'flymake-phpcs)
 ;;(add-hook 'php-mode-hook 'flymake-phpcs-load)
 
